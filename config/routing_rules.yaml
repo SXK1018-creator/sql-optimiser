@@ -1,0 +1,61 @@
+routing:
+  activity:
+    triggers:
+      - activity
+      - volume
+      - tests
+      - workload
+      - billable
+      - non-billable
+      - cost
+      - pricing
+      - charges
+      - income
+      - expenditure
+
+  tat:
+    triggers:
+      - tat
+      - turnaround
+      - sample tat
+      - actual tat
+      - processing time
+      - authorised time
+      - collection to receipt
+      - receipt to processing
+      - processing to authorised
+
+  kpi:
+    triggers:
+      - kpi
+      - compliance
+      - breach
+      - threshold
+      - sla
+      - service level
+      - performance target
+
+clarifications:
+  billable:
+    ask_if_missing: true
+    question: "Do you want billable, non-billable, or both?"
+
+  ca:
+    ask_if_missing: true
+    question: "Which CA should be used?"
+
+  trust:
+    ask_if_missing: true
+    question: "Which Trust should be used?"
+
+  tat_type:
+    ask_if_missing: true
+    question: "Do you want Sample TAT or Actual TAT?"
+
+  kpi_threshold:
+    ask_if_missing: true
+    question: "Should I use contractual KPI thresholds or a custom threshold?"
+
+fallbacks:
+  kpi:
+    use_calc_if_missing_columns: true

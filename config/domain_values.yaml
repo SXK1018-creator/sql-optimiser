@@ -1,0 +1,180 @@
+trust_ca_pairs:
+  description: "Explicit Trust–CA mappings exactly as provided"
+  values:
+    - { trust: ENH, ca: ENHT }
+    - { trust: ENH, ca: ENHCCG }
+    - { trust: PAH, ca: PAH }
+    - { trust: PAH, ca: ENHCCG }
+    - { trust: PAH, ca: WECCG }
+    - { trust: WHH, ca: HVCCG }
+    - { trust: WHH, ca: WHTH }
+
+file_month_year:
+  description: "FileMonthYear values exactly as provided"
+  values:
+    - 2025_03
+    - 2025_04
+    - 2025_05
+    - 2025_06
+    - 2025_07
+    - 2025_08
+    - 2025_09
+    - 2025_10
+    - 2025_11
+    - 2025_12
+    - 2026_01
+    - 2026_02
+    - 2026_03
+    - 2026_04
+    - 2026_05
+    - 2026_06
+    - 2026_07
+
+trust_source_system:
+  description: "Explicit Trust–SourceSystem mappings"
+  values:
+    - { trust: ENH, source_system: WPv5 }
+    - { trust: ENH, source_system: HLX }
+    - { trust: PAH, source_system: TD }
+    - { trust: WHH, source_system: WPv5 }
+    - { trust: WHH, source_system: HLX }
+
+departments:
+  description: "Department values exactly as provided"
+  values:
+    - NULL
+    - BHI
+    - BT
+    - Info
+    - MB
+    - UNKNOWN
+
+source_location_combineddata:
+  description: "SourceLocation values from CombinedData"
+  values:
+    - A&E
+    - Exclude from activity
+    - GP
+    - IP
+    - OP
+    - UNKNOWN
+
+source_location_map_locations:
+  description: "SourceLocation values from map.Locations"
+  values:
+    - A&E
+    - Exclude from activity
+    - GP
+    - GP -
+    - GP - Community
+    - GP - External
+    - GP - HCT
+    - GP - HPFT
+    - GP - MH
+    - GP - Sexual Health
+    - IP
+    - IP - EPUT
+    - IP (AAU)
+    - OP
+    - OP -
+    - OP - Care Home
+    - OP - Community
+    - OP - Dental Practice
+    - OP - EPUT
+    - OP - External
+    - OP - HCT
+    - OP - HOSP
+    - OP - HOSP -
+    - OP - Hospice
+    - OP - Hospital
+    - OP - HPFT
+    - OP - PP
+    - OP - Research
+    - OP -External
+    - OP- Hospice
+    - OP -Hospital
+    - OP -PP
+    - OP -Research
+    - Test
+    - UNKNOWN
+
+urgent_nonurgent:
+  description: "Urgent/Non-Urgent values"
+  values:
+    - R
+    - U
+
+count_y_n:
+  description: "Count (Y/N) values exactly as provided"
+  values:
+    - N
+    - N - (HSL = N)
+    - N - (HSL N)
+    - Not Mapped
+    - Y
+    - Y - flag as new test
+
+result_auth_date_month_year:
+  description: "ResultAuthDateMonthYear values"
+  values:
+    - Apr 2025
+    - Apr 2026
+    - Aug 2025
+    - Dec 2025
+    - Feb 2026
+    - Jan 2026
+    - Jul 2025
+    - Jul 2026
+    - Jun 2025
+    - Jun 2026
+    - Mar 2025
+    - Mar 2026
+    - May 2025
+    - May 2026
+    - Nov 2025
+    - Oct 2025
+    - Sep 2025
+
+qc_indicator:
+  description: "QCIndicator values"
+  values:
+    - E
+    - I
+
+cancelled_indicator:
+  description: "CancelledIndicator values"
+  values:
+    - E
+    - I
+
+contract_year:
+  description: "ContractYear values exactly as provided"
+  values:
+    - Y0
+    - Y1
+    - Y10
+    - Y11
+    - Y12
+    - Y13
+    - Y14
+    - Y15
+    - Y2
+    - Y3
+    - Y4
+    - Y5
+    - Y6
+    - Y7
+    - Y8
+    - Y9
+
+is_distinct:
+  description: "Is_Distinct values"
+  values:
+    - 0
+    - 1
+
+test_code_mapped:
+  description: "TestCodeMapped values"
+  values:
+    - E
+    - I

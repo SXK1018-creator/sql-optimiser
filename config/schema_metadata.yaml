@@ -1,0 +1,212 @@
+tables:
+
+  WH_Staging.CombinedData:
+    description: "Primary activity, costing, pricing, and metadata table"
+    columns:
+      FileMonthYear: { data_type: nvarchar, nullable: true }
+      Trust: { data_type: nvarchar, nullable: true }
+      SourceSystem: { data_type: nvarchar, nullable: true }
+      Workgroup: { data_type: nvarchar, nullable: true }
+      Department: { data_type: nvarchar, nullable: true }
+      TestCount: { data_type: int, nullable: true }
+      HospitalNumber: { data_type: nvarchar, nullable: true }
+      LabNumber: { data_type: nvarchar, nullable: true }
+      UniqueRefCount: { data_type: int, nullable: true }
+      LocationCode: { data_type: nvarchar, nullable: true }
+      LocationName: { data_type: nvarchar, nullable: true }
+      ClinicianCode: { data_type: nvarchar, nullable: true }
+      ClinicianName: { data_type: nvarchar, nullable: true }
+      ClinicianSpecialtyCode: { data_type: nvarchar, nullable: true }
+      ClinicianSpecialty: { data_type: nvarchar, nullable: true }
+      ReceivedDateTime: { data_type: datetime, nullable: true }
+      "Count (Y/N)": { data_type: nvarchar, nullable: true }
+      OrderedTestCode: { data_type: nvarchar, nullable: true }
+      OrderedTestDescription: { data_type: nvarchar, nullable: true }
+      Test_Code: { data_type: nvarchar, nullable: true }
+      Test_Description: { data_type: nvarchar, nullable: true }
+      "Final Test Code": { data_type: nvarchar, nullable: true }
+      "Final Test Description": { data_type: nvarchar, nullable: true }
+      ResultAuthDate: { data_type: datetime, nullable: true }
+      ResultAuthDateYear: { data_type: nvarchar, nullable: true }
+      ResultAuthDateMonthYear: { data_type: nvarchar, nullable: true }
+      ActualTAT: { data_type: float, nullable: true }
+      WorkingHoursTAT: { data_type: int, nullable: true }
+      CPTAT: { data_type: int, nullable: true }
+      SourceLocation: { data_type: nvarchar, nullable: true }
+      Urgent_NonUrgent: { data_type: nvarchar, nullable: true }
+      QCIndicator: { data_type: varchar, nullable: false }
+      CancelledIndicator: { data_type: varchar, nullable: false }
+      ContractYear: { data_type: nvarchar, nullable: true }
+      CA: { data_type: nvarchar, nullable: true }
+      TotalCost: { data_type: float, nullable: true }
+      TestCodeMapped: { data_type: nvarchar, nullable: true }
+      Is_Distinct: { data_type: int, nullable: true }
+
+  WH_Staging.BHI_BT_MB_Calc:
+    description: "Raw calculated metrics including Sample TAT"
+    columns:
+      FileMonthYear: { data_type: nvarchar, nullable: true }
+      Trust: { data_type: nvarchar, nullable: true }
+      System: { data_type: nvarchar, nullable: true }
+      Workgroup: { data_type: nvarchar, nullable: true }
+      OrderNo: { data_type: nvarchar, nullable: true }
+      LabNumber: { data_type: nvarchar, nullable: true }
+      HospitalNumber: { data_type: nvarchar, nullable: true }
+      NHSNumber: { data_type: nvarchar, nullable: true }
+      ClinicianCode: { data_type: nvarchar, nullable: true }
+      ClinicianName: { data_type: nvarchar, nullable: true }
+      ClinicianSpecialtyCode: { data_type: nvarchar, nullable: true }
+      ClinicianSpecialty: { data_type: nvarchar, nullable: true }
+      SourceCode: { data_type: nvarchar, nullable: true }
+      SourceName: { data_type: nvarchar, nullable: true }
+      SourceClass: { data_type: nvarchar, nullable: true }
+      SourceClassName: { data_type: nvarchar, nullable: true }
+      Surname: { data_type: nvarchar, nullable: true }
+      Forename: { data_type: nvarchar, nullable: true }
+      DOB: { data_type: datetime, nullable: true }
+      Sex: { data_type: nvarchar, nullable: true }
+      PatientCategory: { data_type: nvarchar, nullable: true }
+      Priority: { data_type: nvarchar, nullable: true }
+      ReceivedDateTime: { data_type: datetime, nullable: true }
+      SampleDateTime: { data_type: datetime, nullable: true }
+      OrderedTestCode: { data_type: nvarchar, nullable: true }
+      OrderedTestDescription: { data_type: nvarchar, nullable: true }
+      TestCode: { data_type: nvarchar, nullable: true }
+      TestDescription: { data_type: nvarchar, nullable: true }
+      Result: { data_type: nvarchar, nullable: true }
+      ResultEnteredDateTime: { data_type: datetime, nullable: true }
+      ResultAuthDateTime: { data_type: datetime, nullable: true }
+      ActualTAT: { data_type: float, nullable: true }
+      WorkingHoursTAT: { data_type: int, nullable: true }
+      CPTAT: { data_type: int, nullable: true }
+      ContractYear_MapId: { data_type: nvarchar, nullable: true }
+      QCIndicator: { data_type: varchar, nullable: false }
+      CancelledIndicator: { data_type: varchar, nullable: false }
+
+  WH_Staging.vw_CombinedKPI_SK:
+    description: "KPI view combining Calc + KPI mapping + CA/source context"
+    columns:
+      FileMonthYear: { data_type: nvarchar, nullable: true }
+      Trust: { data_type: nvarchar, nullable: true }
+      System: { data_type: nvarchar, nullable: true }
+      Workgroup: { data_type: nvarchar, nullable: true }
+      OrderNo: { data_type: nvarchar, nullable: true }
+      LabNumber: { data_type: nvarchar, nullable: true }
+      HospitalNumber: { data_type: nvarchar, nullable: true }
+      ClinicianCode: { data_type: nvarchar, nullable: true }
+      ClinicianName: { data_type: nvarchar, nullable: true }
+      ClinicianSpecialtyCode: { data_type: nvarchar, nullable: true }
+      ClinicianSpecialty: { data_type: nvarchar, nullable: true }
+      SourceCode: { data_type: nvarchar, nullable: true }
+      SourceName: { data_type: nvarchar, nullable: true }
+      SourceClass: { data_type: nvarchar, nullable: true }
+      SourceClassName: { data_type: nvarchar, nullable: true }
+      PatientCategory: { data_type: nvarchar, nullable: true }
+      Priority: { data_type: nvarchar, nullable: true }
+      ReceivedDateTime: { data_type: datetime, nullable: true }
+      SampleDateTime: { data_type: datetime, nullable: true }
+      OrderedTestCode: { data_type: nvarchar, nullable: true }
+      OrderedTestDescription: { data_type: nvarchar, nullable: true }
+      TestCode: { data_type: nvarchar, nullable: true }
+      TestDescription: { data_type: nvarchar, nullable: true }
+      Result: { data_type: nvarchar, nullable: true }
+      ResultEnteredDateTime: { data_type: datetime, nullable: true }
+      ResultAuthDateTime: { data_type: datetime, nullable: true }
+      ActualTAT: { data_type: float, nullable: true }
+      WorkingHoursTAT: { data_type: int, nullable: true }
+      CPTAT: { data_type: int, nullable: true }
+      QCIndicator: { data_type: varchar, nullable: false }
+      CancelledIndicator: { data_type: varchar, nullable: false }
+      ResultAuthDateMonthYear: { data_type: nvarchar, nullable: true }
+      Test_Code_KPI: { data_type: nvarchar, nullable: true }
+      CA: { data_type: nvarchar, nullable: true }
+      Service_Level_Number: { data_type: float, nullable: true }
+      TAT_Target_Value: { data_type: float, nullable: true }
+      Source_Location: { data_type: nvarchar, nullable: true }
+      TATAchieved: { data_type: int, nullable: true }
+
+maps:
+
+  WH_Staging.map.KPI:
+    description: "Contractual KPI mapping table"
+    columns:
+      TrustSite: { data_type: nvarchar, nullable: true }
+      Service_Level_Number: { data_type: float, nullable: true }
+      Service_Level_Name: { data_type: nvarchar, nullable: true }
+      Test_Code: { data_type: nvarchar, nullable: true }
+      Source_Type: { data_type: nvarchar, nullable: true }
+      Urgency_Code: { data_type: nvarchar, nullable: true }
+      TAT_Target: { data_type: nvarchar, nullable: true }
+      TAT_Target_Value: { data_type: float, nullable: true }
+
+  WH_Staging.map.Locations:
+    description: "Location mapping table"
+    columns:
+      LocationCode: { data_type: nvarchar, nullable: true }
+      LocationName: { data_type: nvarchar, nullable: true }
+      Address: { data_type: nvarchar, nullable: true }
+      Address2: { data_type: nvarchar, nullable: true }
+      Category: { data_type: nvarchar, nullable: true }
+      OldRecord: { data_type: nvarchar, nullable: true }
+      SourceLocation: { data_type: nvarchar, nullable: true }
+      TrustSite: { data_type: nvarchar, nullable: true }
+      Urgent_NonUrgent: { data_type: nvarchar, nullable: true }
+      CA: { data_type: nvarchar, nullable: true }
+
+  WH_Staging.map.Pricing:
+    description: "Pricing table"
+    columns:
+      ContractYear: { data_type: nvarchar, nullable: true }
+      CA: { data_type: nvarchar, nullable: true }
+      Standardised_Test_Description: { data_type: nvarchar, nullable: true }
+      TotalCost: { data_type: float, nullable: true }
+
+  WH_Staging.map.TestCodes:
+    description: "Test code mapping table"
+    columns:
+      Test_Code: { data_type: nvarchar, nullable: true }
+      Test_Description: { data_type: nvarchar, nullable: true }
+      Department: { data_type: nvarchar, nullable: true }
+      Count_Y_N: { data_type: nvarchar, nullable: true }
+      Standardised_Test_Code: { data_type: nvarchar, nullable: true }
+      Standardised_Test_Description: { data_type: nvarchar, nullable: true }
+      Count_Comments: { data_type: nvarchar, nullable: true }
+      Test_Comments: { data_type: nvarchar, nullable: true }
+      TrustSite: { data_type: nvarchar, nullable: true }
+      System: { data_type: nvarchar, nullable: true }
+      CA: { data_type: nvarchar, nullable: true }
+
+relationships:
+  WH_Staging.CombinedData:
+    joins:
+      WH_Staging.map.Locations: LocationCode
+      WH_Staging.map.TestCodes: Test_Code
+
+  WH_Staging.BHI_BT_MB_Calc:
+    joins:
+      WH_Staging.map.TestCodes: TestCode
+      WH_Staging.map.Locations: SourceCode
+
+  WH_Staging.vw_CombinedKPI_SK:
+    joins:
+      WH_Staging.map.KPI: Test_Code_KPI
+      WH_Staging.map.TestCodes: TestCode
+      WH_Staging.map.Locations: Source_Location
+
+mappings:
+  calc_to_combineddata:
+    System: SourceSystem
+    SourceCode: LocationCode
+    SourceName: LocationName
+
+mandatory_filters:
+  QCIndicator: "I"
+  CancelledIndicator: "I"
+  Is_Distinct: 1
+
+month_fields:
+  - ResultAuthDateMonthYear
+  - FileMonthYear
+  - ReceivedDateTime
+  - SampleDateTime
+  - ResultAuthDateTime
